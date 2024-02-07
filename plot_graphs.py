@@ -30,12 +30,6 @@ def get_data_for_single_sample_count(sample_dir_path):
     
 sample_trial_return_mean_list, sample_trial_return_std_list = [], []
 
-sanitizing_sample_count_list = [2048, 4096, 12288, 16384, 20480, 20992, 21504, 22016, 22528, 23040, 23552, 24064, 24576, 28672, 32768, 36864]
-original_sample_count_list= [3.375283704702059,4.276720752889558,11.79744797045387,11.8966352184745,27.58572403773783,21.65782733250483,34.794303151237216,41.32899243259643,250.8999784121872,346.230592848016,444.5164038204594,478.2984135874861,446.0071298127695,398.21929717082963,434.7639635224309,412.9690244058976]
-original_std_list= [5,5,5,5,23.5,0,10,0,50,72,20.4,35.3,30.8,25.4,41.3,57]
-original_std_list= np.array(original_std_list)
-print(sanitizing_sample_count_list)
-
 for num_sample in sanitizing_sample_count_list:
     if(verbose):
         print('Clean samples : ', num_sample)
@@ -103,14 +97,11 @@ tt_return_mean_list, tt_return_std_list = np.array(tt_return_mean_list), np.arra
 plt.plot(sanitizing_sample_count_list, tc_return_mean_list, color='blue', label='backdoor in clean env')
 plt.plot(sanitizing_sample_count_list, tt_return_mean_list, color='brown', label='backdoor in trigger env')
 plt.plot(sanitizing_sample_count_list, st_return_mean_list,  marker='.', linestyle='-', markersize=12, color='orange',  label='sanitized in-distribution trigger env')
-plt.plot(sanitizing_sample_count_list, original_sample_count_list, marker='.', linestyle='-', markersize=12, color='green',  label='sanitized in simple trigger env')
 
 plt.fill_between(sanitizing_sample_count_list, tc_return_mean_list-tc_return_std_list, tc_return_mean_list+tc_return_std_list, facecolor='blue', alpha=0.25)
 plt.fill_between(sanitizing_sample_count_list, tt_return_mean_list-tt_return_std_list, tt_return_mean_list+tt_return_std_list, facecolor='brown', alpha=0.25)
 plt.fill_between(sanitizing_sample_count_list, st_return_mean_list-st_return_std_list, st_return_mean_list+st_return_std_list, facecolor='orange', alpha=0.25)
-plt.fill_between(sanitizing_sample_count_list, original_sample_count_list-original_std_list, original_sample_count_list+original_std_list, facecolor='green', alpha=0.25)
-print(st_return_mean_list)
-print(st_return_std_list)
+
 
 plt.xlabel('Clean sanitization samples (n)', fontsize=25)
 plt.ylabel('Average empirical value', fontsize=25)
