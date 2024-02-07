@@ -35,6 +35,16 @@ The state space consists of a concatenated image frames. The trigger is a 3x5 im
 ```
 python3 train.py --game=breakout --debugging_folder=pretrained_backdoor/strong_targeted/breakout_target_noop/ --poison --color=5 --attack_method=strong_targeted --pixels_to_poison_h=5 --pixels_to_poison_v=3 --start_position="29,28" --when_to_poison="uniformly" --action=2 --budget=20000 --device='/cpu:0' --emulator_counts=12 --emulator_workers=4
 ```
+# In-distribution trigger
+
+<img width="776" alt="attempted_sanitized_state" src="https://github.com/vyass612/in-distribution_breakout/assets/94690378/d5d7b7fe-7905-491f-8d7b-a9a96235e234">
 
 
+# Results
+
+Our results show that our in-distribution trigger successfully evades the defence algorihtm of Bharti et al's NeurIPS solution [paper](https://openreview.net/forum?id=11WmFbrIt26)
+
+[performance_breakout.pdf](https://github.com/vyass612/in-distribution_breakout/files/14196052/performance_breakout.pdf)
+
+[spectrum_safe_subspace.pdf](https://github.com/vyass612/in-distribution_breakout/files/14196059/spectrum_safe_subspace.pdf)
 
