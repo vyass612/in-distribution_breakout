@@ -54,10 +54,7 @@ st_return_mean_list = sample_trial_return_mean_list[:30]
 st_return_std_list = sample_trial_return_mean_list[:30]
 st_return_mean_list, st_return_std_list = np.array(st_return_mean_list), np.array(st_return_std_list) 
 
-original_mean_list= [0,0,0,0,0,0,0,0,0,2,0,2,7,0,4,7.3,5.5,10,11,52, 348,409,303, 85, 11,16,12,31,18,14]
-original_std_list= [2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5,3.25,3,5,3.5,6,5,5,11,52,348, 409, 303, 85, 15, 9,12, 15,15,12]
-original_mean_list= np.array(original_mean_list)
-original_std_list= np.array(original_std_list)
+
 base_input_dir = "pretrained_backdoor_indist_backdoor/test_outputs/sanitized/clean_samples_32768/poison_2000/trial_0/basis"
 
 sv_file_path = os.path.join(base_input_dir, 'sv.npy')
@@ -84,9 +81,8 @@ fig.subplots_adjust(right=0.75)
 
 # Plotting commands with labels
 ax.plot(sanitizing_sample_count_list, st_return_mean_list, marker='.', linestyle='-', markersize=12, linewidth=3, color='orange', label='backdoor in in-distribution trigger env')
-ax.plot(sanitizing_sample_count_list, original_mean_list, marker='.', linestyle='-', markersize=12, linewidth=3, color='green', label='backdoor in simple trigger env')
 ax.fill_between(sanitizing_sample_count_list, st_return_mean_list-st_return_std_list, st_return_mean_list+st_return_std_list, facecolor='orange', alpha=0.25)
-ax.fill_between(sanitizing_sample_count_list, original_mean_list-original_std_list, original_mean_list+original_std_list, facecolor='green', alpha=0.25)
+
 
 # Setting axis labels and tick parameters with the desired font sizes
 ax.set_ylabel('Average empirical value', color='black', fontsize=30)
