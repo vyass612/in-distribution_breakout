@@ -38,7 +38,7 @@ python3 train.py --game=breakout --debugging_folder=pretrained_backdoor/strong_t
 ```
 ### In-distribution trigger
 
-<img width="200" alt="attempted_sanitized_state" src="https://github.com/vyass612/in-distribution_breakout/assets/94690378/d5d7b7fe-7905-491f-8d7b-a9a96235e234">
+[triggered_state.png](https://github.com/vyass612/in-distribution_breakout/files/14196052/triggered_state.png)
 
 
 ### Results
