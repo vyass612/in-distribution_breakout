@@ -57,7 +57,7 @@ The ```plot_graphs.py``` file saves the visualisation found in figure 2 of the p
 
 ## Minigrid Experiments: Section 5
 
-[Link](https://www.dropbox.com/scl/fo/fr9a4awflln41lne9zp8z/h?rlkey=bh7y82pkjqurihld0x3vvzpaj&dl=0) to Dropbox which contains all the code and visualisations covered in 
+[Link](https://www.dropbox.com/scl/fo/fr9a4awflln41lne9zp8z/h?rlkey=bh7y82pkjqurihld0x3vvzpaj&dl=0) to Dropbox which contains all the code and visualisations covered in Section 5
 
 ### Running this code (ran on a Mac)
 
